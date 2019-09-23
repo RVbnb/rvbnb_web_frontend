@@ -2,15 +2,14 @@ import React, {useState} from "react";
 import axios from "axios"; 
 
 
-function landownerRegister() {
+const LandownerRegister = props => {
 
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(false)
-    const [landRegister, setLandRegister] = useState({register: {
+    const [landRegister, setLandRegister] = useState({
         username: "", 
-        password: "", 
+        password: "",  
         is_land_owner: true
-       }
     })
 
     const handleSubmit = event => {
@@ -21,12 +20,12 @@ function landownerRegister() {
         .then(res => {
             console.log(res)
             setIsLoading(false)
-            localStorage.setItem("token", res.data.payload)
+            localStorage.setItem("token", res.data.token)
             props.history.push("/login")
         })
         .catch(error => {
             setIsError(true)
-            console.log("Error from Landowner handleSubmit", error)
+            console.log("Error from Landowner Register handleSubmit", error)
         })
         setIsLoading(false)
         setIsError(false)
@@ -43,7 +42,7 @@ function landownerRegister() {
         if(isLoading) {
             return(
                 <>
-                    <h2> Loading New Account </h2>
+                    <h2> Loading </h2>
                 </>
             )
         }
@@ -69,21 +68,21 @@ function landownerRegister() {
         type="text"
         name="username"
         placeholder="enter username"
-        value={props.register.username}
+        value={props.username}
         onChange={handleChange}
         />
         <input 
         type="password"
         name="password"
         placeholder="enter password"
-        value={props.register.password}
+        value={props.password}
         onChange={handleChange}
         />
-
+        <button> Submit </button> 
         </form>
         </div>
         </>
     )
 }
 
-export default landownerRegister; 
+export default LandownerRegister; 
