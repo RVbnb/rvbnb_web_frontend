@@ -20,8 +20,16 @@ function landownerRegister() {
         .post("https://rvbnb.herokuapp.com/api/auth/register", landRegister) 
         .then(res => {
             console.log(res)
-            setLandRegister(res.data)
+            setIsLoading(false)
+            localStorage.setItem("token", res.data.payload)
+            props.history.push("/login")
         })
+        .catch(error => {
+            setIsError(true)
+            console.log("Error from Landowner handleSubmit", error)
+        })
+        setIsLoading(false)
+        setIsError(false)
     }
 
     const handleChange = event => {
@@ -53,23 +61,27 @@ function landownerRegister() {
 
     return(
         <>
-        <form onSubmit={}> 
+        { loading() }
+        { error() }
+        <div> 
+        <form onSubmit={handleSubmit}> 
         <input 
         type="text"
         name="username"
         placeholder="enter username"
         value={props.register.username}
-        onChange={}
+        onChange={handleChange}
         />
         <input 
         type="password"
         name="password"
         placeholder="enter password"
         value={props.register.password}
-        onChange={}
+        onChange={handleChange}
         />
 
         </form>
+        </div>
         </>
     )
 }
