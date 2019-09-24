@@ -6,14 +6,11 @@ const RVOwnerCard = props => {
   return (
       <>
     <div className="rv-owner-card">
-        {/* <h2>ID: {id} </h2> */}
-      {/* <p>owner_id:{owner_id}</p> */}
-
       <div className="location">
        <p> Location: {props.owner.location} </p>
       </div>
       <div className="description">
-       <h3> Description: <strong> {props.owner.description} </strong></h3>
+       <h3> Description: {props.owner.description} </h3>
       <p> Price_per_day:{props.owner.price_per_day} </p>
       <img src={props.owner.photo} alt="photo of owner land"/>
     </div>
