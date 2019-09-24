@@ -3,16 +3,17 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import landownerRegister from './components/registerforms/LandownerRegister';
 import RVRegister from './components/registerforms/RVRegister.js'; 
-import LandownerLogin from './components/loginforms/LandownerLogin';
-import PrivateRoute from './components/routes/PrivateRoute';
+// import LandownerLogin from './components/loginforms/LandownerLogin';
+import PrivateRoute from './components/utilities/PrivateRoute';
 import RVLogin from "./components/loginforms/RVLogin.js"; 
+import LandownerForm from './components/landowners/LandownerForm';
 
 function App() {
   return (
     <Router> 
     <div className="App">
       <div>
-        <h1> Welcome To RVbnb  </h1>
+        <h1> Welcome To RVbnb </h1>
         {/* Links */}
         <Link to="/register"> Register </Link>
         <Link to="/login"> Login </Link> {" "}
@@ -23,7 +24,7 @@ function App() {
       <Route path="/register" component={landownerRegister} />
       <Route path ="/rvregister" component ={RVRegister} />
        {/* PrivetRoutes  */}
-       <PrivateRoute path="/login" component={LandownerLogin} />
+       <PrivateRoute path="/login" component={LandownerForm} />
       <PrivateRoute path="/rvlogin" component={RVLogin} />
     
     </div>
