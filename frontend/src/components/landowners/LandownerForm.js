@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utilities/axiosWithAuth.js";  
+import LandownersFormCard from "./LandownersFormCard.js";
 
 const LandownerForm = props => {
     
@@ -13,26 +14,30 @@ const LandownerForm = props => {
         description: "", 
         price_per_day: "", 
         // photo: ""
-        
+
         }
     ])
 
     // State below allows land owners to view their listings they created/edited/deleted (.get() state)
 
-    const [viewAdded, setViewAdded] = useState({
+    const [viewAdded, setViewAdded] = useState([
+        {
+
         id: 2,
         owner_id: 2, 
         location: "", 
         description: "", 
         price_per_day: "", 
-    })
+
+        }
+    ])
 
     useEffect(() => {
         axiosWithAuth()
         .get("https://rvbnb.herokuapp.com/api/listings", viewAdded)
         .then(res => {
             console.log("Data from useEffect on landownerform file", res)
-            setViewAdded({viewAdded: res.data})
+            setViewAdded(res.data)
         })
         .catch(error => {
             console.log(error)
@@ -44,11 +49,11 @@ const LandownerForm = props => {
         axiosWithAuth()
         .post("https://rvbnb.herokuapp.com/api/listings", landAdd )
         .then(res => {
-            console.log(res)
-            setLandAdd({landAdd: res.data})
+            console.log("Coming to you from postData", res)
+            setLandAdd(res.data)
         })
         .catch(error => {
-            console.log("error from landownerform handle submit", error)
+            console.log("error from landownerform postData", error)
         }, [])
     } 
 
@@ -64,13 +69,13 @@ const LandownerForm = props => {
         <h2> Hello Land Owner! </h2>
         <p> create a listing below  </p>  
         <form onSubmit={postData}> 
-        <input 
+        {/* <input 
         type="text"
         name="location"
         placeholder="enter location"
         value={props.location}
         onChange={handleChange}
-        />
+        /> */}
         <input 
         type="text"
         name="description"
@@ -87,6 +92,11 @@ const LandownerForm = props => {
         />
         <button> Submit </button> 
         </form>
+        <div> 
+        { viewAdded.map(view => (
+            <LandownersFormCard key={view.id} view={view} />
+        ))}
+        </div> 
         </>
     )
 }
