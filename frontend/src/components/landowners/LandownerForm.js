@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utilities/axiosWithAuth.js";
 
 const LandownerForm = props => {
     
-    // State below is set to add to the listings 
+    // State below is set to add to the listings (.post() state)
     const [landAdd, setLandAdd] = useState({
         id: 1,
         owner_id: 1, 
@@ -13,7 +13,7 @@ const LandownerForm = props => {
         // photo: ""
     })
 
-    // State below allows land owners to view their listings they created/edited/deleted
+    // State below allows land owners to view their listings they created/edited/deleted (.get() state)
 
     const [viewAdded, setViewAdded] = useState({
         id: 2,
@@ -32,8 +32,8 @@ const LandownerForm = props => {
         })
         .catch(error => {
             console.log(error)
-        }, [])
-    })
+        })
+    }, [])
 
     const postData = event => {
         event.preventDefault()
