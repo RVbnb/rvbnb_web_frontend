@@ -1,40 +1,37 @@
-import React, {useState} from "react"; 
+import React, { useState } from "react";
 import axios from "axios"; 
 
-
-function landownerRegister() {
-
+const LandownerLogin = props => {
+    
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(false)
-    const [landRegister, setLandRegister] = useState({register: {
+    const [landLogin, setLandLogin] = useState({
         username: "", 
-        password: "", 
-        is_land_owner: true
-       }
+        password: ""
     })
 
     const handleSubmit = event => {
         event.preventDefault()
         setIsLoading(true)
         axios 
-        .post("https://rvbnb.herokuapp.com/api/auth/register", landRegister) 
+        .post("https://rvbnb.herokuapp.com/api/auth/login", landLogin) 
         .then(res => {
             console.log(res)
             setIsLoading(false)
-            localStorage.setItem("token", res.data.payload)
+            localStorage.setItem("token", res.data.token)
             props.history.push("/login")
         })
         .catch(error => {
             setIsError(true)
-            console.log("Error from Landowner handleSubmit", error)
-        })
+            console.log("Error from Landowner Login handleSubmit", error)
+        }, [])
         setIsLoading(false)
         setIsError(false)
     }
 
     const handleChange = event => {
-        setLandRegister({
-            ...landRegister, 
+        setLandLogin({
+            ...landLogin, 
             [event.target.name]: event.target.value
         })
     }
@@ -53,7 +50,7 @@ function landownerRegister() {
         if(isError) {
             return(
             <>
-                <h2> Error </h2> 
+                <h2> Something Went Wrong </h2> 
             </>
             )
         }
@@ -69,21 +66,21 @@ function landownerRegister() {
         type="text"
         name="username"
         placeholder="enter username"
-        value={props.register.username}
+        value={props.username}
         onChange={handleChange}
         />
         <input 
         type="password"
         name="password"
         placeholder="enter password"
-        value={props.register.password}
+        value={props.password}
         onChange={handleChange}
         />
-
+        <button> Submit </button> 
         </form>
         </div>
         </>
     )
 }
 
-export default landownerRegister; 
+export default LandownerLogin; 
