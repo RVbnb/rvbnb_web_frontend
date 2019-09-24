@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"; 
+import { Link } from "react-router-dom"; 
 
 const LandownerLogin = props => {
     
@@ -77,6 +78,7 @@ const LandownerLogin = props => {
         onChange={handleChange}
         />
         <button> Submit </button> 
+        <Link to="landowners"> <div> Don't have an account? </div> </Link>
         </form>
         </div>
         </>
