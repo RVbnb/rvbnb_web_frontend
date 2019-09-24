@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios"; 
+import { Link } from "react-router-dom"; 
+import NavBar from '../NavBar';
 
 const RVRegister = props => {
     const [RVOwners, setRVOwners]= useState({ username:"", password:"", is_land_owner: false});
@@ -26,8 +28,10 @@ const handleChange = event =>{ setRVOwners({...RVOwners, [event.target.name]: ev
 };
     
     return (
-<div className="rv-owner"> 
+    <div className="rv-owner"> 
+    <p> Register As RV Owner </p>
     <form onSubmit={handleSubmit}>
+    <NavBar />
         <label>UserName</label>
     <input type="text" name="username" placeholder="UserName"
     onChange={handleChange} value={props.username}/>
@@ -35,6 +39,7 @@ const handleChange = event =>{ setRVOwners({...RVOwners, [event.target.name]: ev
     <input type="text" name="password" placeholder="password"
     onChange={handleChange} value={props.password} />
     <button type="submit"> Register </button>
+    <Link to="/rvlogin"> <div> Already have an account? </div> </Link>
         </form>
       </div>
     ) 

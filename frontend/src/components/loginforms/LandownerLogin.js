@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios"; 
+import { Link } from "react-router-dom"; 
+import NavBar from "../NavBar";
 
 const LandownerLogin = props => {
     
@@ -61,7 +63,9 @@ const LandownerLogin = props => {
         { loading() }
         { error() }
         <div> 
+        <p> Login As Landowner </p>
         <form onSubmit={handleSubmit}> 
+        <NavBar />
         <input 
         type="text"
         name="username"
@@ -76,7 +80,8 @@ const LandownerLogin = props => {
         value={props.password}
         onChange={handleChange}
         />
-        <button> Submit </button> 
+        <button> Login </button> 
+        <Link to="/landowners"> <div> Don't have an account? </div> </Link>
         </form>
         </div>
         </>
