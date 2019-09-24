@@ -21,7 +21,7 @@ const LandownerLogin = props => {
             console.log(res)
             setIsLoading(false)
             localStorage.setItem("token", res.data.token)
-            props.history.push("/login")
+            props.history.push("/landownerform")
         })
         .catch(error => {
             setIsError(true)
