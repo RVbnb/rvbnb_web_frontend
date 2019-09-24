@@ -24,7 +24,7 @@ const LandownerLogin = props => {
         .catch(error => {
             setIsError(true)
             console.log("Error from Landowner Login handleSubmit", error)
-        })
+        }, [])
         setIsLoading(false)
         setIsError(false)
     }

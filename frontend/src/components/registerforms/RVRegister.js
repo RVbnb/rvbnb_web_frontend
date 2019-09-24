@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import axios from "axios"; 
 
-function RVRegister(props){
-    const [RVOwners, setRVOwners]= useState({ username:"", password:"", is_land_owner:false});
+const RVRegister = props => {
+    const [RVOwners, setRVOwners]= useState({ username:"", password:"", is_land_owner: false});
 
     
 const handleSubmit = event => {
     event.preventDefault() 
     axios
-    .post('https://rvbnb.herokuapp.com/api/auth/register')
+    .post('https://rvbnb.herokuapp.com/api/auth/register', RVOwners)
     .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.token)

@@ -26,7 +26,7 @@ const LandownerRegister = props => {
         .catch(error => {
             setIsError(true)
             console.log("Error from Landowner Register handleSubmit", error)
-        })
+        }, [])
         setIsLoading(false)
         setIsError(false)
     }

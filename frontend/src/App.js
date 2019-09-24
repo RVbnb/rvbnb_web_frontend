@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import landownerRegister from './components/registerforms/LandownerRegister';
-// import RVRegister from './components/registerforms/RVRegister';
 import RVRegister from './components/registerforms/RVRegister.js'; 
 import LandownerLogin from './components/loginforms/LandownerLogin';
 import PrivateRoute from './components/routes/PrivateRoute';
 import RVLogin from "./components/loginforms/RVLogin.js"; 
+
 function App() {
   return (
     <Router> 
@@ -24,7 +24,7 @@ function App() {
       <Route path ="/rvregister" component ={RVRegister} />
        {/* PrivetRoutes  */}
        <PrivateRoute path="/login" component={LandownerLogin} />
-      <PrivateRoute path="/rvlgoin" component={RVLogin} />
+      <PrivateRoute path="/rvlogin" component={RVLogin} />
     
     </div>
     </Router> 

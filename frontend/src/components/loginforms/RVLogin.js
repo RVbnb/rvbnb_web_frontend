@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios"; 
 
-function RVLogin(props) {
+const RVLogin = props => {
     const [RVOwners, setRVOwners]= useState({ username:"", password:""});
 
     
@@ -34,7 +34,7 @@ const handleSubmit = event => {
     <label>Password</label>
     <input type="text" name="password" placeholder="password"
     onChange={handleChange} value={props.password} />
-    <button type="submit">Register</button>
+    <button type="submit"> Register </button>
         </form>
       </div>
     ) 
