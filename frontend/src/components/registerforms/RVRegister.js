@@ -14,7 +14,7 @@ const handleSubmit = event => {
     .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.token)
-        props.history.push("/login")
+        props.history.push("/rvlogin")
     })
     .catch(error => {
         console.log("This is an error from RVRegister", error)
