@@ -20,7 +20,7 @@ console.log(owners)
 
 useEffect(() => {
     axiosWithAuth()
-    .get("https://rvbnb.herokuapp.com/api/listings", owners)
+    .get("https://rvbnb.herokuapp.com/api/listings/", owners)
     .then(res => {
         console.log("Data from useEffect on RVownersView file", res)
         setOwners(res.data)
