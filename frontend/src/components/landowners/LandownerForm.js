@@ -3,18 +3,15 @@ import { axiosWithAuth } from "../utilities/axiosWithAuth.js";
 import LandownersFormCard from "./LandownersFormCard.js";
 
 const LandownerForm = props => {
-    
+    console.log("landownerform props", props)
     // State below is set to add to the listings (.post() state)
     const [landAdd, setLandAdd] = useState({
-        id: 1,
         owner_id: 1, 
         location: "", 
         description: "", 
         price_per_day: "", 
         photo: ""
     })
-
-    console.log("This is fucked up", props.location)
 
     // State below allows land owners to view their listings they created/edited/deleted (.get() state)
 
@@ -31,6 +28,11 @@ const LandownerForm = props => {
     ])
 
     useEffect(() => {
+        getData()
+    }, [])
+
+
+    const getData = () => {
         axiosWithAuth()
         .get("https://rvbnb.herokuapp.com/api/listings", viewAdded)
         .then(res => {
@@ -40,7 +42,7 @@ const LandownerForm = props => {
         .catch(error => {
             console.log(error)
         })
-    }, [])
+    }
 
     const postData = event => {
         event.preventDefault()
@@ -71,21 +73,21 @@ const LandownerForm = props => {
         type="text"
         name="location"
         placeholder="enter location"
-        value={props.location}
+        value={landAdd.location}
         onChange={handleChange}
         />
         <input 
         type="text"
         name="description"
         placeholder="enter description"
-        value={props.description}
+        value={landAdd.description}
         onChange={handleChange}
         />
         <input
         type="text"
-        name="price per day"
+        name="price_per_day"
         placeholder="enter price per day"
-        value={props.price_per_day}
+        value={landAdd.price_per_day}
         onChange={handleChange}
         />
         <button> Submit </button> 
