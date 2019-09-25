@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { axiosWithAuth }  from "../utilities/axiosWithAuth.js"; 
+import axiosWithAuth from "../utilities/axiosWithAuth.js"; 
 import RVOwnerCard from './RVOwnerCard';
 
 const RVOwnersView = (props) => {
