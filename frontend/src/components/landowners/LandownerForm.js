@@ -5,18 +5,16 @@ import LandownersFormCard from "./LandownersFormCard.js";
 const LandownerForm = props => {
     
     // State below is set to add to the listings (.post() state)
-    const [landAdd, setLandAdd] = useState([
-        {
-
+    const [landAdd, setLandAdd] = useState({
         id: 1,
         owner_id: 1, 
         location: "", 
         description: "", 
         price_per_day: "", 
-        // photo: ""
+        photo: ""
+    })
 
-        }
-    ])
+    console.log("This is fucked up", props.location)
 
     // State below allows land owners to view their listings they created/edited/deleted (.get() state)
 
@@ -47,10 +45,10 @@ const LandownerForm = props => {
     const postData = event => {
         event.preventDefault()
         axiosWithAuth()
-        .post("https://rvbnb.herokuapp.com/api/listings", landAdd )
+        .post("https://rvbnb.herokuapp.com/api/listings", landAdd)
         .then(res => {
             console.log("Coming to you from postData", res)
-            setLandAdd(res.data)
+            setLandAdd({landAdd: res.data})
         })
         .catch(error => {
             console.log("error from landownerform postData", error)
@@ -69,13 +67,13 @@ const LandownerForm = props => {
         <h2> Hello Land Owner! </h2>
         <p> create a listing below  </p>  
         <form onSubmit={postData}> 
-        {/* <input 
+        <input 
         type="text"
         name="location"
         placeholder="enter location"
         value={props.location}
         onChange={handleChange}
-        /> */}
+        />
         <input 
         type="text"
         name="description"
