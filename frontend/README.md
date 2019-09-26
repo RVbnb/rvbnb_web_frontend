@@ -20,38 +20,38 @@ libraries such as:
 ## Students:
 
 :princess: **Rane Wallin**<br/>
-Project Leader
+- Project Leader
+- Github: [@ranewallin](https://github.com/ranewallin)
 
 :prince: **Andrew Allen** <br/>
-Back End Developer
+- Back End Developer
+- Github: [@AndrewA0112](https://github.com/AndrewA0112)
 
 :prince: **Brian Vilchez** <br/>
-IOS Developer
+- IOS Developer
+- Github: [@bfvilchez](https://github.com/bfvilchez)
 
 :princess: **Mai Tran** <br/>
-Android Developer
+- Android Developer
+- Github: [@msmaitran](https://github.com/msmaitran)
 
 :prince: **Noah Franco** <br/>
-Front End Arcitect <br/>
+- Front End Arcitect <br/>
+- Github: [@noahfranco](https://github.com/noahfranco)
 
 :princess: **Nerissa Taylor** <br/>
-Front End Arcitect <br/>
+- Front End Arcitect <br/>
+- Github: [@nerissaj](https://github.com/nerissaj)
 
 :prince: **Justin Williams** <br/>
-UI Web Design <br/>
+- UI Web Design <br/>
+- Github: [@justinwilly](https://github.com/justinwilly)
 
 
 ## Author
 
 :prince: **Noah Franco**
 
-- Github: [@noahfranco](https://github.com/noahfranco)
-- Github: [@msmaitran](https://github.com/msmaitran)
-- Github: [@nerissaj](https://github.com/nerissaj)
-- Github: [@AndrewA0112](https://github.com/AndrewA0112)
-- Github: [@justinwilly](https://github.com/justinwilly)
-- Github: [@bfvilchez](https://github.com/bfvilchez)
-- Github: [@ranewallin](https://github.com/ranewallin)
 
 ## Show your support
 
