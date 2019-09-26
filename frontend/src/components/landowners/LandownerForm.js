@@ -1,30 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { axiosWithAuth } from "../utilities/axiosWithAuth.js";  
+import axiosWithAuth from "../utilities/axiosWithAuth.js"; 
 import LandownersFormCard from "./LandownersFormCard.js";
 
 const LandownerForm = props => {
-    
+    console.log("landownerform props", props)
     // State below is set to add to the listings (.post() state)
-    const [landAdd, setLandAdd] = useState([
-        {
+    const [landAdd, setLandAdd] = useState({
 
-        id: 1,
-        owner_id: 1, 
         location: "", 
         description: "", 
         price_per_day: "", 
-        // photo: ""
+        photo: ""
+    })
 
-        }
-    ])
+
 
     // State below allows land owners to view their listings they created/edited/deleted (.get() state)
 
     const [viewAdded, setViewAdded] = useState([
         {
-
+            
         id: 2,
-        owner_id: 2, 
+        owner_id: 2,     
         location: "", 
         description: "", 
         price_per_day: "", 
@@ -33,8 +30,13 @@ const LandownerForm = props => {
     ])
 
     useEffect(() => {
+        getData()
+    }, [landAdd])
+
+
+    const getData = () => {
         axiosWithAuth()
-        .get("https://rvbnb.herokuapp.com/api/listings", viewAdded)
+        .get("https://rvbnb.herokuapp.com/api/listings")
         .then(res => {
             console.log("Data from useEffect on landownerform file", res)
             setViewAdded(res.data)
@@ -42,15 +44,15 @@ const LandownerForm = props => {
         .catch(error => {
             console.log(error)
         })
-    }, [])
+    }
 
     const postData = event => {
         event.preventDefault()
         axiosWithAuth()
-        .post("https://rvbnb.herokuapp.com/api/listings", landAdd )
+        .post("https://rvbnb.herokuapp.com/api/listings", landAdd)
         .then(res => {
             console.log("Coming to you from postData", res)
-            setLandAdd(res.data)
+            setLandAdd({landAdd: res.data})
         })
         .catch(error => {
             console.log("error from landownerform postData", error)
@@ -69,32 +71,32 @@ const LandownerForm = props => {
         <h2> Hello Land Owner! </h2>
         <p> create a listing below  </p>  
         <form onSubmit={postData}> 
-        {/* <input 
+        <input 
         type="text"
         name="location"
         placeholder="enter location"
-        value={props.location}
+        value={landAdd.location}
         onChange={handleChange}
-        /> */}
+        />
         <input 
         type="text"
         name="description"
         placeholder="enter description"
-        value={props.description}
+        value={landAdd.description}
         onChange={handleChange}
         />
         <input
         type="text"
-        name="price per day"
+        name="price_per_day"
         placeholder="enter price per day"
-        value={props.price_per_day}
+        value={landAdd.price_per_day}
         onChange={handleChange}
         />
-        <button> Submit </button> 
+        <button type="submit"> Submit </button> 
         </form>
         <div> 
         { viewAdded.map(view => (
-            <LandownersFormCard key={view.id} view={view} />
+            <LandownersFormCard key={view.id} view={view} history={props.history} setUpdateId={props.setUpdateId} setViewAdded={setViewAdded}  />
         ))}
         </div> 
         </>
