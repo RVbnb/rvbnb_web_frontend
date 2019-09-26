@@ -1,21 +1,29 @@
 import React from "react"; 
 import { Link } from "react-router-dom";
-import {HomeBox, BoarderBox, HomePageHeading, ContainerDiv } from "./styling/styled.js"; 
+import {
+    HomeBox,
+    HomePageHeading,
+    ContainerDiv,
+    Paragraph
+  } from "./styling/styled.js"
 
 const Home = () => {
 
     return(
         <>
         <div>
-            <HomePageHeading> Welcome To RVbnb </HomePageHeading>
+            <HomePageHeading> Welcome To RV-bnb </HomePageHeading>
                 {/* Links */}
             <ContainerDiv>
-            <BoarderBox>
-            <Link to="/rv"> <HomeBox> RV Owners </HomeBox> </Link>
-            </BoarderBox>
-            <BoarderBox>
-            <Link to="/landowners"> <HomeBox> Land Owners </HomeBox> </Link>
-            </BoarderBox>
+            <HomeBox>
+            <Link to="/rv">
+                <Paragraph> RV Owners</Paragraph>
+                </Link>
+            </HomeBox>
+            <HomeBox>
+            <Link to="/landowners"> <Paragraph> Land Owners </Paragraph>
+            </Link>
+            </HomeBox>
             </ContainerDiv>
       </div>
         </>

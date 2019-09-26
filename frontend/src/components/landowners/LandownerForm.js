@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utilities/axiosWithAuth.js"; 
 import LandownersFormCard from "./LandownersFormCard.js";
+import NavBar from "../NavBar"
+import {
+    LandOwnerHeading,
+    Description2,
+    Button,
+    ButtonDiv,
+    SearchBar,
+      } from "../styling/styled"
 
-const LandownerForm = props => {
+  const LandownerForm = props => {
     console.log("landownerform props", props)
     // State below is set to add to the listings (.post() state)
     const [landAdd, setLandAdd] = useState({
@@ -13,8 +21,6 @@ const LandownerForm = props => {
         photo: ""
     })
 
-
-
     // State below allows land owners to view their listings they created/edited/deleted (.get() state)
 
     const [viewAdded, setViewAdded] = useState([
@@ -24,8 +30,8 @@ const LandownerForm = props => {
         owner_id: 2,     
         location: "", 
         description: "", 
-        price_per_day: "", 
-
+        price_per_day: "",
+        photo: ""
         }
     ])
 
@@ -68,37 +74,51 @@ const LandownerForm = props => {
 
     return(
         <>
-        <h2> Hello Land Owner! </h2>
-        <p> create a listing below  </p>  
+        <NavBar/>
+        <LandOwnerHeading> Hello Land Owner! </LandOwnerHeading>
+        <Description2>
+        Please use the following form to create your listing! Please remember to
+        be accurate in your location and descriptions as this will help match
+        you with the perfect renter.
+        </Description2>
+
         <form onSubmit={postData}> 
-        <input 
+        <ButtonDiv>
+        <SearchBar 
         type="text"
         name="location"
-        placeholder="enter location"
+        placeholder="Enter location"
         value={landAdd.location}
         onChange={handleChange}
         />
-        <input 
+        </ButtonDiv>
+        <ButtonDiv>
+       <SearchBar
+       type="text"
+       name="price_per_day"
+       placeholder="Please enter how much you would like to charge per day"
+       value={landAdd.price_per_day}
+       onChange={handleChange}
+       />
+       </ButtonDiv>
+       <ButtonDiv>
+        <SearchBar 
         type="text"
         name="description"
-        placeholder="enter description"
+        placeholder="Please enter a description of your land"
         value={landAdd.description}
         onChange={handleChange}
         />
-        <input
-        type="text"
-        name="price_per_day"
-        placeholder="enter price per day"
-        value={landAdd.price_per_day}
-        onChange={handleChange}
-        />
-        <button type="submit"> Submit </button> 
+    </ButtonDiv>
+        <ButtonDiv>
+        <Button type="submit"> Submit </Button> 
+        </ButtonDiv>
         </form>
         <div> 
         { viewAdded.map(view => (
             <LandownersFormCard key={view.id} view={view} history={props.history} setUpdateId={props.setUpdateId} setViewAdded={setViewAdded}  />
         ))}
-        </div> 
+        </div>
         </>
     )
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import axiosWithAuth from "../utilities/axiosWithAuth.js"; 
+import { Description3, Button2, CardDiv,ButtonDiv, LandImage } from "../styling/styled"
 
 const LandownersFormCard = props => {
     console.log("This is props from LandownersFormCard", props)
@@ -36,11 +37,16 @@ const LandownersFormCard = props => {
 
     return(
         <>
-        <p> Location: { props.view.location } </p>
-        <p> Description: { props.view.description } </p>
-        <p> Price Per Day: { props.view.price_per_day } </p> 
-        <button onClick={updateform}> Update </button>
-        <button onClick={deleteFunction}> Delete </button>
+        <ButtonDiv>
+        <CardDiv>
+        <LandImage src="https://www.nationalgeographic.com/content/dam/travel/2017-digital/french-riviera/villefranche-sur-mer-harbour-france.jpg" alt="This is a generic image of land"/>
+        <Description3> Location: {props.view.location} </Description3>
+        <Description3> Description: {props.view.description} </Description3>
+        <Description3> Price Per Day: {props.view.price_per_day} </Description3> 
+        <Button2 onClick={updateform}> Update </Button2>
+        <Button2 onClick={deleteFunction}> Delete </Button2>
+        </CardDiv>
+        </ButtonDiv>
         </>
     )
 }

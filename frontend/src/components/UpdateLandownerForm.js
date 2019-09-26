@@ -1,6 +1,5 @@
 import React, { useState } from "react"; 
 import axiosWithAuth from "../components/utilities/axiosWithAuth"; 
-// import getData from "../components/landowners/LandownerForm.js"; 
 import LandownerForm from "../components/landowners/LandownerForm.js";
  
 export const UpdateLandownerForm = props => {
@@ -49,7 +48,7 @@ export const UpdateLandownerForm = props => {
         <input required
         type="text"
         name="description"
-        placeholder="enter description"
+        placeholder="Enter description"
         value={edit.description}
         onChange={event => setEdit({
             ...edit, description: event.target.value
@@ -58,7 +57,7 @@ export const UpdateLandownerForm = props => {
         <input required
         type="text"
         name="price_per_day"
-        placeholder="enter price per day"
+        placeholder="Enter price per day"
         value={edit.price_per_day}
         onChange={event => {
            setEdit({...edit, price_per_day: event.target.value}) 
