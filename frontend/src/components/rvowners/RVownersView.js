@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utilities/axiosWithAuth.js";
 import RVOwnerCard from './RVOwnerCard';
 import Owner from '../OwnerSearch';
+import RVReserveCard from './RVReserveCard';
 
 const RVOwnersView = (props) => {
 
@@ -17,13 +18,13 @@ const RVOwnersView = (props) => {
 
         }
     ]);
-    console.log(owners)
+    //console.log(owners)
 
     useEffect(() => {
         axiosWithAuth()
             .get("https://rvbnb.herokuapp.com/api/listings/", owners)
             .then(res => {
-                console.log("Data from useEffect on RVownersView file", res)
+                //console.log("Data from useEffect on RVownersView file", res)
                 setOwners(res.data)
             })
             .catch(error => {
@@ -36,6 +37,7 @@ const RVOwnersView = (props) => {
             <h2> Welcome RV Owners! </h2>
             <p> Feel free to browse around </p>
             <Owner />
+            
             {console.log(props.owners)}
             {owners.map(owner => (
                 <RVOwnerCard key={owner.id} owner={owner} />

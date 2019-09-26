@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RVOwnerCard = props => {
-  console.log("This is props from RVOwnerCard file", props)
+ //console.log("This is props from RVOwnerCard file", props)
 
   return (
     <>
