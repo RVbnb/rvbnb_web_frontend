@@ -1,75 +1,72 @@
 import React, { useState } from "react"; 
 import axiosWithAuth from "../components/utilities/axiosWithAuth"; 
-import getData from "../components/landowners/LandownerForm.js"; 
+// import getData from "../components/landowners/LandownerForm.js"; 
 import LandownerForm from "../components/landowners/LandownerForm.js";
-
+ 
 export const UpdateLandownerForm = props => {
     
     const [edit, setEdit] = useState({
-        // id: 2,
-        owner_id: 2, 
+      
         location: "", 
         description: "", 
         price_per_day: "", 
     })
+
+    const [error, setError] = useState(null)
+
     
+
     const editFunction = event => {
         event.preventDefault() 
         axiosWithAuth()
-        .put(`https://rvbnb.herokuapp.com/api/listings/${edit.id}`, edit)
+        .put(`https://rvbnb.herokuapp.com/api/listings/${props.updateId}`, edit)
         .then(res => {
-            console.log(res)
-            getData()
+            console.log("Res from editFunction", res)
+            props.history.push("/landownerform")
+            // getData()
         })
         .catch(error => {
             console.log(error)
+            setError("Update Request Failed")
         }, [])
+        
     };
 
-//      const Delete = event => {
-//         event.preventDefault();  
-//         axiosWithAuth() 
-//        .delete(`https://rvbnb.herokuapp.com/api/listings/SOMETHING-GOES-HERE`)
-//        .then(response => {
-//        console.log(response.data)
-//        })
-//        .catch(error => {
-//           console.log(error)
-//        })
-//    }
-    
+   
     return(
         <>
+        <h2> Update Listings </h2>
         <form onSubmit={editFunction}> 
-        <input 
+        <input required
         type="text"
         name="location"
         placeholder="enter location"
-        value={props.location}
+        value={edit.location}
         onChange={event => setEdit({
             ...edit, location: event.target.value
         })}
         />
-        <input 
+        <input required
         type="text"
         name="description"
         placeholder="enter description"
-        value={props.description}
+        value={edit.description}
         onChange={event => setEdit({
             ...edit, description: event.target.value
         })}
         />
-        <input
+        <input required
         type="text"
         name="price_per_day"
         placeholder="enter price per day"
-        value={props.price_per_day}
+        value={edit.price_per_day}
         onChange={event => {
            setEdit({...edit, price_per_day: event.target.value}) 
         }}
         />
-        {/* <button onclick={}> Update </button> */}
+        <button> Update </button>
         </form>
+        { error && <h3> { error } </h3> }
         </>
     )
 }
