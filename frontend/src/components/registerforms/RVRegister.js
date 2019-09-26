@@ -1,7 +1,16 @@
 import React, {useState} from 'react';
 import axios from "axios"; 
 import { Link } from "react-router-dom"; 
-import NavBar from '../NavBar';
+import NavBar from "../NavBar"
+import {
+  RVRegisterHeading,
+  Label,
+  Description,
+  Button,
+  ReRouteLogin,
+  ButtonDiv,
+  ReRouteDiv
+} from "../styling/styled"
 
 const RVRegister = props => {
     const [RVOwners, setRVOwners]= useState({ username:"", password:"", is_land_owner: false});
@@ -28,18 +37,30 @@ const handleChange = event =>{ setRVOwners({...RVOwners, [event.target.name]: ev
 };
     
     return (
-    <div className="rv-owner"> 
-    <p> Register As RV Owner </p>
+        <div className="rv-owner"> 
+        <NavBar />
+    <RVRegisterHeading> Register As RV Owner </RVRegisterHeading>
+    <Description>
+          To Register your RV, you will need to create a username and password.
+          <br />
+          The password must contain at least 8 characters.
+        </Description>
     <form onSubmit={handleSubmit}>
-    <NavBar />
-        <label>UserName</label>
+    <Label>Username</Label>
     <input type="text" name="username" placeholder="UserName"
     onChange={handleChange} value={props.username}/>
-    <label>Password</label>
+        <Label>Password</Label>
     <input type="text" name="password" placeholder="password"
     onChange={handleChange} value={props.password} />
-    <button type="submit"> Register </button>
-    <Link to="/rvlogin"> <div> Already have an account? </div> </Link>
+
+        <ButtonDiv> 
+          <Button> Register </Button>
+        </ButtonDiv>
+        <ReRouteDiv>
+        <ReRouteLogin> <Link to="/rvlogin"> Already have an account? 
+         </Link>
+         </ReRouteLogin>
+         </ReRouteDiv>
         </form>
       </div>
     ) 

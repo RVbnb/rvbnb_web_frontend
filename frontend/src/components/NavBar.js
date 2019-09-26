@@ -1,14 +1,21 @@
-import React from "react"; 
-import { Link } from "react-router-dom"; 
-// import from ""
+import React from "react"
+import { Link } from "react-router-dom"
+import { NavBarStyled, NavBarHeading, HeaderDiv } from "./styling/styled"
 
 const NavBar = () => {
-    
-    return(
-        <>
-        <Link to="/"> <div> <i className="fas fa-home"></i> </div> </Link>
-        </>
-    )
+  return (
+    <>
+      <NavBarStyled>
+        <Link to="/">
+          <i className="fas fa-home fa-5x"></i>
+        </Link>
+        <HeaderDiv>
+          <NavBarHeading>RV-bnb</NavBarHeading>
+          <Link to="home"> </Link>
+        </HeaderDiv>
+      </NavBarStyled>
+    </>
+  )
 }
 
-export default NavBar; 
+export default NavBar

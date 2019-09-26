@@ -2,6 +2,15 @@ import React from 'react';
 import axios from "axios"; 
 import { Link } from "react-router-dom"; 
 import NavBar from '../NavBar';
+import {
+    RVRegisterHeading,
+    Label,
+    Button,
+    ReRouteLogin,
+    ReRouteDiv,
+    ButtonDiv
+  } from "../styling/styled"
+  
 
 class RVLogin extends React.Component {
     state = {
@@ -37,22 +46,32 @@ class RVLogin extends React.Component {
 
     render() {
         return(
-            <>
-                <div className="rv-owner"> 
-                <form onSubmit={this.handleSubmit}>
-                <p> Login As RV Owner </p> 
+
+            <div className="rv-owner"> 
                 <NavBar />
-                    <label>UserName</label>
+                <form onSubmit={this.handleSubmit}>
+
+                <RVRegisterHeading> Login As An RV Owner </RVRegisterHeading> 
+                    <Label>UserName</Label>
                 <input type="text" name="username" placeholder="UserName"
                 onChange={this.handleChange} value={this.state.credentials.username}/>
-                <label>Password</label>
+
+                <Label>Password</Label>
+                
                 <input type="text" name="password" placeholder="password"
-                onChange={this.handleChange} value={this.state.credentials.password} />
-                <button type="submit"> Login </button>
-                <Link to="/rv"> <div> Don't have an account? </div> </Link>
-                    </form>
-                </div>
-            </>
+                onChange={this.handleChange} value={this.state.credentials.password} 
+                />
+
+                        <ButtonDiv> 
+                        <Button> Login </Button>
+                        </ButtonDiv>
+                        <ReRouteLogin>                     
+                        <Link to="/rv">
+                        <ReRouteDiv> Already have an account? </ReRouteDiv>
+                        </Link>
+                        </ReRouteLogin>
+                        </form>
+                    </div>
         )
     }
 }

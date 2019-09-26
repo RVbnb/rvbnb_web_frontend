@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utilities/axiosWithAuth.js";
 import RVOwnerCard from './RVOwnerCard';
 // import RVReserveCard from './RVReserveCard';
+import NavBar from "../NavBar"
+import { RVHeading, Description2, SearchBar, ButtonDiv } from "../styling/styled"
 
 const RVOwnersView = () => {
 
@@ -15,7 +17,6 @@ const RVOwnersView = () => {
             location: "",
             description: "",
             price_per_day: "",
-            photo: ""
 
         }
     ]);
@@ -52,20 +53,18 @@ const RVOwnersView = () => {
 
     return (
         <div className="owner-list">
-
-            <h2> Welcome RV Owners! </h2>
-            <p> Feel free to browse around </p>
+            <NavBar/>
+            <RVHeading> Welcome RV Owners! </RVHeading>
+            <Description2> Browse for your desired location </Description2>
 
             <form onSubmit={handleSubmit}> 
-            <input 
+            <SearchBar 
             type="text"
             name="location"
-            placeholder="enter location"
+            placeholder="Search for your dream destination"
             value={find}
             onChange={handleChange}
-            />
-            
-            <button> Search </button>
+            />     
             </form>
             <div> 
            {/* Below is the map that allows to render the end point */}
