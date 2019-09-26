@@ -41,7 +41,6 @@ const LandownersFormCard = props => {
         <p> Price Per Day: { props.view.price_per_day } </p> 
         <button onClick={updateform}> Update </button>
         <button onClick={deleteFunction}> Delete </button>
-        
         </>
     )
 }

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import NavBar from '../NavBar';
 
 const RVLogin = props => {
-    const [RVOwners, setRVOwners]= useState({ username:"", password:""});
+
+ const [RVOwners, setRVOwners]= useState({ username:"", password:""});
 
     
 const handleSubmit = event => {
@@ -26,23 +27,25 @@ const handleSubmit = event => {
 
     }); 
 };
-    
-    return (
-<div className="rv-owner"> 
-    <form onSubmit={handleSubmit}>
-    <p> Login As RV Owner </p> 
-    <NavBar />
-        <label>UserName</label>
-    <input type="text" name="username" placeholder="UserName"
-    onChange={handleChange} value={props.username}/>
-    <label>Password</label>
-    <input type="text" name="password" placeholder="password"
-    onChange={handleChange} value={props.password} />
-    <button type="submit"> Login </button>
-    <Link to="/rv"> <div> Don't have an account? </div> </Link>
-        </form>
-      </div>
-    ) 
-}
+        return (
+            <>
+            <div className="rv-owner"> 
+                <form onSubmit={handleSubmit}>
+                <p> Login As RV Owner </p> 
+                <NavBar />
+                    <label>UserName</label>
+                <input type="text" name="username" placeholder="UserName"
+                onChange={handleChange} value={props.username}/>
+                <label>Password</label>
+                <input type="text" name="password" placeholder="password"
+                onChange={handleChange} value={props.password} />
+                <button type="submit"> Login </button>
+                <Link to="/rv"> <div> Don't have an account? </div> </Link>
+                    </form>
+                </div>
+                </>
+        )
+
+    }
 
 export default RVLogin;
