@@ -12,7 +12,7 @@ const handleSubmit = event => {
     axios
     .post('https://rvbnb.herokuapp.com/api/auth/register', RVOwners)
     .then(res => {
-        console.log(res)
+        console.log("", res)
         localStorage.setItem("token", res.data.token)
         props.history.push("/rvlogin")
     })

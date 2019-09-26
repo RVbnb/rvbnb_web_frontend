@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { axiosWithAuth } from "./utilities/axiosWithAuth";
+import axiosWithAuth from "./utilities/axiosWithAuth";
 
 export default function Owner() {
     const [filtered, setFiltered] = useState([]);
     const [query, setQuery] = useState("");
     useEffect(() => {
         axiosWithAuth()
-            .get('https://rvbnb.herokuapp.com/api/listings/:id/', query)
+            .get('https://rvbnb.herokuapp.com/api/listings/', query)
             .then(res => {
                 const data = res.data.filter(data =>
                     data.location.toLowerCase().includes(query.toLowerCase())
