@@ -46,7 +46,6 @@ UI Web Design <br/>
 :prince: **Noah Franco**
 
 - Github: [@noahfranco](https://github.com/noahfranco)
-- Github: [@kingmoc](https://github.com/kingmoc)
 - Github: [@msmaitran](https://github.com/msmaitran)
 - Github: [@nerissaj](https://github.com/nerissaj)
 - Github: [@AndrewA0112](https://github.com/AndrewA0112)
