@@ -96,7 +96,7 @@ const LandownerForm = props => {
         </form>
         <div> 
         { viewAdded.map(view => (
-            <LandownersFormCard key={view.id} view={view} />
+            <LandownersFormCard key={view.id} view={view} history={props.history} setUpdateId={props.setUpdateId} setViewAdded={setViewAdded}  />
         ))}
         </div> 
         </>
