@@ -26,8 +26,8 @@ import {
     const [viewAdded, setViewAdded] = useState([
         {
             
-        id: 2,
-        owner_id: 2,     
+        // id: 2,
+        // owner_id: 2,     
         location: "", 
         description: "", 
         price_per_day: "",
@@ -72,6 +72,7 @@ import {
         })
     }
 
+    
     return(
         <>
         <NavBar/>
