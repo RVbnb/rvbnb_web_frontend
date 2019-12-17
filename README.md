@@ -10,8 +10,7 @@ Our application incorporates some great technologies such as the following liste
        [x] React
        [x] Context API
        [x] useEffect
-       [x] Axios 
-       [x] Styled Components
+       
 
 libraries such as:
     [x] awesomefont
@@ -20,7 +19,7 @@ libraries such as:
 
 ## Team:
 
-:princess: **Rane Wallin**<br/>
+:woman: **Rane Wallin**<br/>
 - Project Leader
 - Github: [@ranewallin](https://github.com/ranewallin)
 
