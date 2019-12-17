@@ -7,7 +7,6 @@ Our application incorporates some great technologies such as the following liste
     Javascript:
     
     [x] React
-    [x] Context API
     [x] useEffect
        
 
