@@ -12,10 +12,12 @@ Our application incorporates some great technologies such as the following liste
        [x] useEffect
        
 
-libraries such as:
+libraries such as
     [x] awesomefont
     [x] axios
     [x] styled-components
+    [x] semantic-ui-react
+    [x] react-datepicker
 
 
 ## What does it do?
@@ -60,10 +62,10 @@ RVbnb was created and regareds to working on team building, colaboration, and pr
 :man: **Noah Franco**
 
 
-## Show your support
+## Live Application 
 
-Give a :star: if this project helped you!
+https://rvbnbwebfrontend.noahfranco.now.sh/
 
----
+
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
