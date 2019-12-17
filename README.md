@@ -12,10 +12,12 @@ Our application incorporates some great technologies such as the following liste
        [x] React
        [x] Context API
 
-libraries such as:
+libraries such as
     [x] awesomefont
     [x] axios
     [x] styled-components
+    [x] semantic-ui-react
+    [x] react-datepicker
 
 ## Students:
 
