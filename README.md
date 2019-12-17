@@ -18,40 +18,40 @@ libraries such as:
     [x] axios
     [x] styled-components
 
-## Students:
+## Team:
 
 :princess: **Rane Wallin**<br/>
 - Project Leader
 - Github: [@ranewallin](https://github.com/ranewallin)
 
-:prince: **Andrew Allen** <br/>
+:man: **Andrew Allen** <br/>
 - Back End Developer
 - Github: [@AndrewA0112](https://github.com/AndrewA0112)
 
-:prince: **Brian Vilchez** <br/>
+:man: **Brian Vilchez** <br/>
 - IOS Developer
 - Github: [@bfvilchez](https://github.com/bfvilchez)
 
-:princess: **Mai Tran** <br/>
+:woman: **Mai Tran** <br/>
 - Android Developer
 - Github: [@msmaitran](https://github.com/msmaitran)
 
-:prince: **Noah Franco** <br/>
+:man: **Noah Franco** <br/>
 - Front End Arcitect <br/>
 - Github: [@noahfranco](https://github.com/noahfranco)
 
-:princess: **Nerissa Taylor** <br/>
+:woman: **Nerissa Taylor** <br/>
 - Front End Arcitect <br/>
 - Github: [@nerissaj](https://github.com/nerissaj)
 
-:prince: **Justin Williams** <br/>
+:man: **Justin Williams** <br/>
 - UI Web Design <br/>
 - Github: [@justinwilly](https://github.com/justinwilly)
 
 
 ## Author
 
-:prince: **Noah Franco**
+:man: **Noah Franco**
 
 
 ## Show your support
