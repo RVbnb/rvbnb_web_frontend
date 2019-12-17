@@ -17,6 +17,13 @@ libraries such as:
     [x] axios
     [x] styled-components
 
+
+## What does it do?
+RVbnb lets RV owners access to use previously unknown, unavailable site/locations and allows landowners to generate revenue for their unused land.
+
+## Projects Ambition 
+RVbnb was created and regareds to working on team building, colaboration, and practicing building a front end app  
+
 ## Team:
 
 :woman: **Rane Wallin**<br/>
