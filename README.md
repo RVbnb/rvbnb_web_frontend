@@ -1,23 +1,24 @@
 <h1 align="center">Welcome to RVbnb 👋</h1>
 
-Checkout Our Work: https://rvbnbwebfrontend.noahfranco.now.sh/
-
 ## Technologies:
 
 Our application incorporates some great technologies such as the following listed below 🔥:
 
     Javascript
+    
        [x] React
        [x] Context API
        [x] useEffect
        
 
-libraries such as
+    libraries
+
     [x] awesomefont
     [x] axios
     [x] styled-components
     [x] semantic-ui-react
     [x] react-datepicker
+         
 
 
 ## What does it do?
