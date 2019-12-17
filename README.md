@@ -6,11 +6,12 @@ Checkout Our Work: https://rvbnbwebfrontend.noahfranco.now.sh/
 
 Our application incorporates some great technologies such as the following listed below 🔥:
 
-    Node
     Javascript
-       [x] Redux
        [x] React
        [x] Context API
+       [x] useEffect
+       [x] Axios 
+       [x] Styled Components
 
 libraries such as:
     [x] awesomefont
